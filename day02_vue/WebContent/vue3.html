@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/vue.js"></script>
+</head>
+<body>
+<div id="did">
+姓名：<input v-model="emp.name">
+性别：<input v-model="emp.sex">
+爱好：<input v-model="emp.hobby">
+年龄：{{age}}
+<button @click="add()">加</button>
+<button @click="up()">减</button>
+<ul>
+<li v-for="user in users">
+   {{user.name}}-{{user.ag}}-{{user.jn}}
+</li>
+</ul>
+</div>
+<script type="text/javascript">
+  var app=new Vue({
+	  el:"#did",
+	  data:{
+		emp:{},
+        age:0,
+        users:[
+              {name:'荣荣',ag:19,jn:'辅助'},
+              {name:'唐三',ag:19,jn:'控制'},
+              {name:'竹清',ag:19,jn:'敏攻'},
+              ]
+		
+	  },
+	  created(){
+		  this.emp.name="小奥",
+		  this.emp.sex="男",
+		  this.emp.hobby="刷手机"
+	  },
+	  methods:{
+		  add(){
+			  this.age++;
+		  },
+		  up(){
+			  this.age--;
+		  }
+	  }
+  });
+ </script>
+</body>
+</html>

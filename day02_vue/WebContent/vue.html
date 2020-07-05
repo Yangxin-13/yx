@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="did">
+    <input type="text" v-model="num">
+  <h3>hello{{info}}第{{num}}次访问入 </h3>
+   <button v-on:click="num++">加</button>
+   <button v-on:click="num--">减</button>
+    </div>
+  <script type="text/javascript">
+   //实例化vue对象
+    var app=new Vue({
+    	el:"#did",
+    	data:{
+    	 info:"欢迎你",
+    	 num:1
+    	}
+    });
+    </script>
+</body>
+</html>
