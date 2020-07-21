@@ -4,4 +4,13 @@
 <select id="show" resultType="queryVo">
 select s.*,m.mname from student s,major m where s.mid=m.mid
 </select>
+<select id="finmajor" resultType="major">
+select * from major
+</select>
+<insert id="add" parameterType="student" >
+insert into student values(null,#{sname},#{sex},#{age},#{birthday},null,#{mid})
+</insert>
+<update id="update" parameterType="student" >
+update student set sname=#{sname},sex=#{sex},age=#{age},birthday=#{birthday},mid=#{mid} where sid=#{sid}
+</update>
 </mapper>
